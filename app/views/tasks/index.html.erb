@@ -1,0 +1,20 @@
+<h1>Listing tasks</h1>
+<hr />
+<ul id="tasks">
+	<% @tasks.each do |task| %>
+		<li class="task">
+			<%= display_task_name task%>
+			<p>
+				<strong>Created:</strong> <% distance_of_time_in_words task.created_at, Time.now %> ago | 
+				<% if task.completed? %>
+					<strong>Completed:</strong>
+					<%= distance_of_time_in_words task.completed_at, Time.now %> ago |
+				<% end %>
+				<%= link_to 'Edit', edit_task_path(task) %> |
+				<%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %>
+			</p>
+		</li>
+	<% end %>
+</ul>
+<hr />
+<%= link_to 'New Task', new_task_path, :class => "nice small radius blue button" %>
