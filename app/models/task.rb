@@ -9,5 +9,5 @@ class Task < ActiveRecord::Base
       self.completed_at = nil
     end
   end
-  #attr_accessible :completed, :completed_at, :name
+  attr_accessible :completed, :completed_at, :name
 end

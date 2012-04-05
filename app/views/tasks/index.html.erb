@@ -5,13 +5,13 @@
 		<li class="task">
 			<%= display_task_name task%>
 			<p>
-				<strong>Created:</strong> <% distance_of_time_in_words task.created_at, Time.now %> ago | 
+				<strong>Created:</strong> <%= distance_of_time_in_words task.created_at, Time.now, true %> ago | 
 				<% if task.completed? %>
 					<strong>Completed:</strong>
-					<%= distance_of_time_in_words task.completed_at, Time.now %> ago |
+					<%= distance_of_time_in_words task.completed_at, Time.now, true %> ago |
 				<% end %>
 				<%= link_to 'Edit', edit_task_path(task) %> |
-				<%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %>
+				<%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %>
 			</p>
 		</li>
 	<% end %>

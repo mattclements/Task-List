@@ -17,9 +17,10 @@
     <%= f.text_field :name, :class => 'oversize input-text' %>
   </div>
   <div class="field">
-    <%= f.label :completed %>
+    <label for="task_completed">
     <%= f.check_box :completed %>
 	Completed
+	</label>
   </div>
   <div class="actions">
     <%= f.submit %>
