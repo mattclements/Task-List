@@ -3,7 +3,7 @@
 <ul id="tasks">
 	<% @tasks.each do |task| %>
 		<li class="task">
-			<%= display_task_name task%>
+			<%= display_task_name task %>
 			<p>
 				<strong>Created:</strong> <%= distance_of_time_in_words task.created_at, Time.now, true %> ago | 
 				<% if task.completed? %>
